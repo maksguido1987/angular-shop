@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="toolbar no-select" routerLink="">
+      <mat-icon
+        class="home-icon"
+        aria-hidden="false"
+        aria-label="Example heart icon"
+        >home</mat-icon
+      >
+      <span>Third Line</span>
+    </div>
+    <span class="spacer">
+      <button mat-flat-button color="primary" routerLink="">Главная</button>
+      <button mat-flat-button color="primary" routerLink="products">Продукты</button></span
+    >
+    <div class="toolbar no-select">
+      <div class="button-container" routerLink="basket">
+        <button
+          mat-mini-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon"
+        >
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

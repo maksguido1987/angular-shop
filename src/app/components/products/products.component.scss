@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-width: 400px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 10px;
+}

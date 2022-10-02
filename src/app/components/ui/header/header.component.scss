@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.home-icon {
+  margin: 0 10px 0 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.no-select {
+  user-select: none;
+  cursor: pointer;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  max-width: 120px;
+}
