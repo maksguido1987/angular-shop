@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { BasketComponent } from './components/basket/basket.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { BaseComponent } from './components/base/base.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { BaseComponent } from './components/base/base.component';
     ProductDetailsComponent,
     DialogBoxComponent,
     BaseComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,8 @@ import { BaseComponent } from './components/base/base.component';
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

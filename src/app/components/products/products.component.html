@@ -1,13 +1,26 @@
 <div class="container">
-  <mat-card class="card">
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  <mat-toolbar>
+    <button mat-icon-button class="icon">
+      <mat-icon>add_box</mat-icon>
+      добавить товар
+    </button>
+  </mat-toolbar>
+  <mat-card class="card" *ngFor="let product of products">
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <img class="img-responsive" mat-card-image src="{{ product.image }}" />
     <mat-card-content>
-      <p>Price:</p>
+      <p>Price: {{ product.price | currency }}</p>
+      <p>Year: {{ product.year }}</p>
     </mat-card-content>
     <mat-card-actions class="card-buttons">
       <button mat-flat-button color="primary">В корзину</button>
-      <button mat-flat-button color="primary">Подробнее</button>
+      <button
+        mat-flat-button
+        color="primary"
+        [routerLink]="['/product', product.id]"
+      >
+        Подробнее
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
