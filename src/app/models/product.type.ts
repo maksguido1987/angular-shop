@@ -3,11 +3,11 @@ export interface Products {
 }
 
 export interface Product {
-  id: number;
+  id?: number;
   title: string;
   price: number;
   year: string;
-  image: string;
+  image?: string;
   configure: Configure;
 }
 

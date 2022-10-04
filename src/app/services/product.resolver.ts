@@ -12,7 +12,7 @@ import { Product } from '../models/product.type';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductResolver implements Resolve<Product[]> {
+export class ProductResolver implements Resolve<Product> {
   constructor(
     private ProductsService: ProductsService,
     private router: Router
@@ -20,7 +20,7 @@ export class ProductResolver implements Resolve<Product[]> {
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<Product[]> {
+  ): Observable<Product> {
     return this.ProductsService.getProduct(route.params?.['id']).pipe(
       catchError(() => {
         this.router.navigate(['products']);

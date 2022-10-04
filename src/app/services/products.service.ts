@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product.type';
 
 @Injectable({
@@ -15,6 +16,10 @@ export class ProductsService {
   }
 
   getProduct(id: number) {
-    return this.http.get<Product[]>(`${this.path}/${id}`);
+    return this.http.get<Product>(`${this.path}/${id}`);
+  }
+
+  setProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.path, product);
   }
 }
