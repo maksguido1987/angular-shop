@@ -28,7 +28,9 @@
     <input matInput formControlName="title" placeholder="Display" />
   </mat-form-field>
   <div class="button-group">
-    <button mat-flat-button color="primary" type="submit">Добавить</button>
-    <button mat-flat-button (click)="onNoClick()">Отмена</button>
+    <button mat-flat-button color="primary" type="submit">
+      {{ isNewProduct ? "Добавить" : "Обновить" }}
+    </button>
+    <button mat-flat-button (click)="onNoClick()" type="button">Отмена</button>
   </div>
 </form>

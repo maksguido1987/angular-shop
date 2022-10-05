@@ -7,14 +7,13 @@
 }
 
 .card {
-  max-width: 200px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
 }
 
 .card-buttons {
   display: flex;
-  justify-content: space-between;
   grid-gap: 10px;
 }
 

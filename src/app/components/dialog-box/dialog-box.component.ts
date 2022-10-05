@@ -9,23 +9,28 @@ import { Product } from 'src/app/models/product.type';
   styleUrls: ['./dialog-box.component.scss'],
 })
 export class DialogBoxComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    title: new FormControl(''),
-    price: new FormControl(''),
-    year: new FormControl(''),
-    chip: new FormControl(''),
-    SSD: new FormControl(''),
-    memory: new FormControl(''),
-    display: new FormControl(''),
-  });
-
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product
-  ) {}
+  ) {
+    if (this.data) this.isNewProduct = false;
+  }
+
+  form: FormGroup = new FormGroup({
+    id: new FormControl(this.data?.id ?? null),
+    title: new FormControl(this.data?.title ?? ''),
+    price: new FormControl(this.data?.price ?? ''),
+    year: new FormControl(this.data?.year ?? ''),
+    chip: new FormControl(this.data?.configure.chip ?? ''),
+    SSD: new FormControl(this.data?.configure.SSD ?? ''),
+    memory: new FormControl(this.data?.configure.memory ?? ''),
+    display: new FormControl(this.data?.configure.display ?? ''),
+  });
+
+  isNewProduct: boolean = true;
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(this.form);
   }
 
   ngOnInit(): void {}
@@ -44,6 +49,5 @@ export class DialogBoxComponent implements OnInit {
       },
     };
     this.dialogRef.close(this.data);
-    console.log(this.data);
   }
 }

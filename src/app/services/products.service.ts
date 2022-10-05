@@ -22,4 +22,12 @@ export class ProductsService {
   setProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.path, product);
   }
+
+  deleteProduct(id: number) {
+    return this.http.delete<Product>(`${this.path}/${id}`);
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.path}/${product.id}`, product);
+  }
 }
